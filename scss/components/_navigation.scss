@@ -1,0 +1,136 @@
+@use "../variables" as *;
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 0;
+  // background-color: green;
+
+  &__logo {
+    width: 15em;
+  }
+
+  &__toggler {
+    width: 2em;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:focus + .nav__list {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0);
+    }
+  }
+
+  &__list {
+    z-index: 1;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;
+    list-style-type: none;
+    opacity: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: $color-white;
+    transform: translateY(60%);
+    transition: transform 0.4s, opacity 0.5s;
+    visibility: hidden;
+
+    &:hover {
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    padding: 1.5em;
+    transition: background-color 0.4s;
+  }
+
+  &__item:not(:last-child) {
+    border-bottom: 1px solid darken($color-water, 5%);
+  }
+
+  &__item:not(:last-child):hover {
+    border-color: $color-white;
+    background-color: $color-brilliant-azure;
+
+    .nav__link {
+      color: $color-white;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    font-size: 1.6rem;
+    text-decoration: none;
+  }
+
+  &__link:not(.btn) {
+    font-weight: 100;
+    color: $color-dark-electric-blue;
+    text-transform: capitalize;
+    transition: color 0.4s;
+  }
+}
+
+/* 
+* @Media for the navigation on large screen
+*/
+@media only screen and (min-width: 50em) {
+  .nav {
+    position: static;
+
+    &__toggler {
+      display: none;
+    }
+
+    &__list {
+      position: static;
+      flex-direction: row;
+      align-items: center;
+      gap: 1em;
+      width: auto;
+      max-width: none;
+      padding-top: 0;
+      opacity: 1;
+      transform: translate(0);
+      background: none;
+      visibility: visible;
+    }
+
+    &__item {
+      padding: 0;
+    }
+
+    &__item:not(:last-child) {
+      border: none;
+    }
+
+    &__item:not(:last-child):hover {
+      border: none;
+      background: none;
+
+      .nav__link {
+        color: lighten($color-ateneo-blue, 20%);
+      }
+    }
+
+    &__link {
+      width: auto;
+      margin: 0;
+    }
+
+    &__link:not(.btn) {
+      font-weight: 500;
+      color: $color-ateneo-blue;
+    }
+  }
+}

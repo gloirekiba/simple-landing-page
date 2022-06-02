@@ -1,0 +1,25 @@
+@use "../variables" as *;
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: $font-secondary;
+  text-align: center;
+  text-decoration: none;
+  color: $color-white;
+  background-color: $color-brilliant-azure;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+
+  &:hover {
+    background-color: darken($color-brilliant-azure, 20%);
+  }
+}
+
+.btn--large {
+  padding: 1em 2em;
+}

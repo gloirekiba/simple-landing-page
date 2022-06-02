@@ -1,0 +1,229 @@
+@use "index" as *;
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-white;
+  // background-color: red;
+}
+
+img {
+  max-width: 100%;
+  // border: 1px solid red;
+}
+
+section:nth-child(2n) {
+  background-color: $color-water !important;
+}
+
+.container {
+  width: 95%;
+  max-width: 1440px;
+  margin: 0 auto;
+  // border: 1px solid red;
+}
+
+/* 
+* Hero section
+*/
+
+.hero {
+  padding-bottom: 5em;
+  text-align: center;
+  overflow: hidden;
+
+  &__foo {
+    position: relative;
+    margin-bottom: 4em;
+  }
+
+  &__img {
+    animation: anim 2s alternate infinite;
+  }
+
+  span {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 80%;
+    width: 100%;
+    // max-width: 500px;
+    max-height: 500px;
+    border-radius: 50%;
+    transform: scale(1.5);
+    background-color: $color-brilliant-azure;
+    opacity: 0.6;
+    animation: anim2 ease-in-out 3s alternate infinite;
+  }
+
+  &__title {
+    margin-bottom: 0.5em;
+    font-size: 4rem;
+    font-family: $font-primary;
+    color: $color-ateneo-blue;
+  }
+
+  &__text {
+    margin-bottom: 3em;
+  }
+}
+
+/* 
+* Section About
+*/
+
+.about {
+  padding-top: 5em;
+  padding-bottom: 10em;
+
+  &__img {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+}
+
+@media only screen and (min-width: 50em) {
+  .about {
+    &__content {
+      display: flex;
+      gap: 14em;
+      margin-top: 8em;
+    }
+
+    &__img {
+      text-align: left;
+    }
+  }
+}
+
+/* 
+* Section warning
+*/
+.warning {
+  padding: 5em 0;
+
+  &__img {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 50em) {
+  .warning {
+    &__content {
+      display: flex;
+    }
+
+    &__img {
+      margin-left: auto;
+    }
+  }
+}
+
+/* 
+* Section contact
+*/
+
+.contact {
+  padding-top: 5em;
+  padding-bottom: 20em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .paragraph {
+    margin: 0 auto;
+    margin-bottom: 4em;
+  }
+
+  &__social {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+  }
+
+  &__img {
+    padding: 1em 2em;
+    border-radius: 10px;
+    background-color: $color-white;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  &__img:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* 
+* Animation keyframe
+*/
+
+@keyframes anim2 {
+  0% {
+    transform: scale(1.7);
+  }
+}
+
+@keyframes anim {
+  100% {
+    transform: translate(-10%, 10%);
+  }
+}
+
+/* 
+* Media query screen
+*/
+
+@media only screen and (min-width: 50em) {
+  .header {
+    margin-bottom: 1em;
+  }
+  .hero {
+    text-align: left;
+
+    &__content {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    &__foo,
+    &__action {
+      flex-grow: 1;
+    }
+
+    span {
+      max-width: 500px;
+      transform: none;
+      animation: none;
+    }
+
+    &__title {
+      font-size: 8rem;
+      margin-bottom: 0.1em;
+    }
+
+    &__text {
+      max-width: 600px;
+      margin-bottom: 4em;
+    }
+  }
+}
+
+// * {
+//     border: 1px solid red;
+// }
