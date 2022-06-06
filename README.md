@@ -9,7 +9,7 @@ A simple html, css landing page
 * CSS 3
 * Javascript
 
-# The website preview can be viewed here
+## The website preview can be viewed here
 [https://gloirekiba.github.io/devs-tools-webiste](https://gloirekiba.github.io/devs-tools-webiste/)
 
 
