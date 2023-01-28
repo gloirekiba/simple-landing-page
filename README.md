@@ -10,7 +10,7 @@ A simple html, css landing page
 * Javascript
 
 ## The website preview can be viewed here
-[https://gloirekiba.github.io/devs-tools-landing-page/](https://gloirekiba.github.io/devs-tools-landing-page/)
+[https://gloirekiba.github.io/simple-landing-page//)
 
 
 ## Dependencies
